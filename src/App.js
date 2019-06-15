@@ -4,18 +4,24 @@ import SearchForm  from './components/SearchForm.jsx';
 import Results from './components/Results.jsx';
 
 class App extends Component {
+  state = {
+    title: "Gerardo's Amazing App",
+    placeholder: "type into me..."
+  }
   
   render() {
     return (
       <div>
         <Jumbotron>
           <Container>
-            <h1>Search App</h1>
+            <h1 className="title">{this.state.title}</h1>
             <p>
-              This is is a simple search app 
+              Created by, Gerardo Keys in React
             </p>
 
-            <SearchForm />    
+            <SearchForm
+              placeholder={this.state.placeholder}
+             />    
           </Container>
         </Jumbotron>
         <Results />

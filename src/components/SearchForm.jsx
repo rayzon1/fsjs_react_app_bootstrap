@@ -6,12 +6,15 @@ import {
     Button
 } from "react-bootstrap";
 
-const SearchForm = () => (
+const SearchForm = (props) => (
   <Form inline>
     <FormGroup controlId="formInlineEmail">
-      <FormControl type="search" placeholder="enter something..." />
+      <FormControl type="search" placeholder={props.placeholder} />
     </FormGroup>{" "}
-    <Button type="submit">search</Button>
+    <Button 
+        type="submit"
+        onClick={undefined}    
+    >search</Button>
   </Form>
 );
 
