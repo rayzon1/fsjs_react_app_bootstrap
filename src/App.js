@@ -6,7 +6,20 @@ import Results from './components/Results.jsx';
 class App extends Component {
   state = {
     title: "Gerardo's Amazing App",
-    placeholder: "type into me..."
+    placeholder: "type into me...",
+    value: "",
+    titles: []
+  }
+
+  handleChange = (e) => {
+    this.setState({value: e.target.value});
+  }
+
+  handleSubmit = (e) => {
+    console.log('value submitted: ' + this.state.value);
+    e.preventDefault();
+    this.state.titles.push(this.state.value);
+    this.setState({value: ""});
   }
   
   render() {
@@ -21,10 +34,22 @@ class App extends Component {
 
             <SearchForm
               placeholder={this.state.placeholder}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              value={this.state.value}
              />    
           </Container>
         </Jumbotron>
-        <Results />
+        <div id="resultsContainer">
+          {this.state.titles.map( (val, index) => {
+            return <Results
+              key={index}
+              title={val}
+            />
+          })}
+        </div>
+
+
       </div>
     );
   }

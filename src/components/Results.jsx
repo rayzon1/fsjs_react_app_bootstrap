@@ -1,19 +1,35 @@
-import React from "react";
-import { Container, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card } from "react-bootstrap";
+import CardInputs from './CardInputs.jsx';
 
-const Results = () => (
-  <Container>
-    <h2>Results List</h2>
-    <ListGroup>
-      <ListGroupItem href="#" active>
-        Link 1
-      </ListGroupItem>
-      <ListGroupItem href="#">Link 2</ListGroupItem>
-      <ListGroupItem href="#" disabled>
-        Link 3
-      </ListGroupItem>
-    </ListGroup>
-  </Container>
-);
+const Results = props => {
+  const [placeholderGroup] = useState([
+    "Start (Morning, Noon, Night)",
+    "Time to completion"
+  ]);
+
+  return (
+    <Card style={{ width: "25rem" }} className="cards">
+      <Card.Body>
+        <Card.Title>{props.title}</Card.Title>
+        {/* <CardInputs 
+          placeholderGroup={placeholderGroup.timeOfDay}
+        />
+        <CardInputs 
+          placeholderGroup={placeholderGroup.timeToCompletion}
+        /> */}
+        {
+          placeholderGroup.map((val, index) => {
+            return <CardInputs 
+              placeholderGroup={val}
+              key={index}
+            />
+          })
+        }
+      </Card.Body>
+    </Card>
+  );
+
+};
 
 export default Results;

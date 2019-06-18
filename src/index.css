@@ -15,3 +15,15 @@ code {
 .title {
   color: red;
 }
+
+#resultsContainer {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  box-shadow: 1px 1px 6px #555 inset;
+  margin: 10px;
+}
