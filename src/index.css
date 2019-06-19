@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Roboto", BlinkMacSystemFont, "Segoe UI", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,6 +24,42 @@ code {
 }
 
 .cards {
-  box-shadow: 1px 1px 6px #555 inset;
+  box-shadow: 1px 1px 6px red inset;
   margin: 10px;
 }
+
+.date {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.date-text {
+  margin-right: 10px;
+}
+
+.text-area-input {
+  /* text-align: right; */
+  width: 94%;
+  margin-left: 15px;
+  
+}
+
+.text-area-button {
+  color: rgba(0, 0, 0, .6);
+}
+
+.text-area {
+  width: 21rem;
+  height: 8rem !important;
+}
+
+.subtitle {
+  margin-top: 10px;
+}
+
+.card-body  {
+  color: rgba(0, 0, 0, .6);
+}
+
+
+

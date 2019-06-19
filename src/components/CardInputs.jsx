@@ -10,7 +10,6 @@ import {
 const CardInputs = props => {
   const [start, setStart] = useState("");
   const timeRef = React.createRef();
-  const completeRef = React.createRef();
 
   const inputRef = React.createRef();
   const buttonRef = React.createRef();
@@ -19,10 +18,17 @@ const CardInputs = props => {
     reference.current.removeAttribute("hidden");
     inputRef.current.hidden = true;
     buttonRef.current.hidden = true;
+    if(start === 'morning' || start === 'Morning') {
+        timeRef.current.style.color = 'rgba(255, 144, 0, .8)';
+    } else if(start ==='noon' || start === 'Noon') {
+        timeRef.current.style.color = 'rgba(165, 112, 54, .8)';
+    } else if(start==='night' || start === 'Night') {
+        timeRef.current.style.color = 'rgba(55, 0, 183, .8)'
+    }
   };
 
   const timeOfDay = (
-    <Card.Subtitle className="mb-2 text-muted" ref={timeRef} hidden>
+    <Card.Subtitle ref={timeRef} className="subtitle" hidden>
       {start === "morning" || start === "Morning"
         ? start + " - (8 a.m)"
         : start === "noon" || start === "Noon"
@@ -33,22 +39,15 @@ const CardInputs = props => {
     </Card.Subtitle>
   );
 
-  const timeOfCompletion = (
-    <span className="time-complete" ref={completeRef} hidden>
-      {start}
-    </span>
-  );
-
   return (
     <Container>
-      {timeOfDay}
-      {timeOfCompletion}
       <InputGroup className="mb-3">
+        {timeOfDay}
         <FormControl
           placeholder={props.placeholderGroup}
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
-          type="text"
+          type="Subtitle"
           ref={inputRef}
           onChange={e => setStart(e.target.value)}
         />
