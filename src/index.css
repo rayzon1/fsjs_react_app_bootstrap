@@ -61,5 +61,17 @@ code {
   color: rgba(0, 0, 0, .6);
 }
 
+.hidden {
+  display: none;
+}
+
+.check-mark {
+  max-height: 15%;
+  max-width: 15%;
+  position: relative;
+  top: -10px;
+}
+
+
 
 

@@ -18,13 +18,6 @@ const CardInputs = props => {
     reference.current.removeAttribute("hidden");
     inputRef.current.hidden = true;
     buttonRef.current.hidden = true;
-    if(start === 'morning' || start === 'Morning') {
-        timeRef.current.style.color = 'rgba(255, 144, 0, .8)';
-    } else if(start ==='noon' || start === 'Noon') {
-        timeRef.current.style.color = 'rgba(165, 112, 54, .8)';
-    } else if(start==='night' || start === 'Night') {
-        timeRef.current.style.color = 'rgba(55, 0, 183, .8)'
-    }
   };
 
   const timeOfDay = (

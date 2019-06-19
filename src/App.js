@@ -5,8 +5,8 @@ import Results from './components/Results.jsx';
 
 class App extends Component {
   state = {
-    title: "Gerardo's Amazing App",
-    placeholder: "type into me...",
+    title: "Gerardo's To Do App",
+    placeholder: "Activity ...",
     value: "",
     titles: []
   }
